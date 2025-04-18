@@ -10,9 +10,11 @@ public class ButtonBehaviour : MonoBehaviour
     private MeshRenderer meshRenderer;
     public Animator doorAnimator;
     private Animator buttonAnimator;
-    private bool switchState;
+    private static bool switchState = false;
     public float maxDistance;
     public GameObject splash;
+
+    private static List<ButtonBehaviour> allButtons = new List<ButtonBehaviour>();
 
     public UnityEvent onButtonPress;
 
@@ -22,6 +24,7 @@ public class ButtonBehaviour : MonoBehaviour
         meshRenderer = gameObject.GetComponent<MeshRenderer>();
         buttonAnimator = gameObject.GetComponent<Animator>();
         splash.SetActive(false);
+        allButtons.Add(this);
     }
 
     // Update is called once per frame
@@ -41,26 +44,37 @@ public class ButtonBehaviour : MonoBehaviour
     private void Switch()
     {
         switchState = !switchState;
-        //doorAnimator.SetTrigger("ToggleDoor");
-        
+
+        foreach (ButtonBehaviour button in allButtons)
+        {
+
+            button.ChangeButtonMaterial();
+            button.PressButtonAnim();
+           
+        }
+            
+        onButtonPress.Invoke();
+    }
+
+    private void PressButtonAnim()
+    {
         buttonAnimator.Play("GoDown");
+        buttonAnimator.SetTrigger("Pressed");
+    }
+
+    private void ChangeButtonMaterial()
+    {
         if (switchState == true)
         {
             meshRenderer.material = mActive;
             splash.SetActive(true);
-            
+
         }
         else
         {
             meshRenderer.material = mInactive;
             splash.SetActive(false);
         }
-        onButtonPress.Invoke();
-        Invoke("PutButtonBack", 1f);
     }
-
-    private void PutButtonBack()
-    {
-        buttonAnimator.SetTrigger("Pressed");
-    }
+  
 }
