@@ -10,6 +10,7 @@ public class ButtonBehaviour : MonoBehaviour
     private MeshRenderer meshRenderer;
     public Animator doorAnimator;
     private Animator buttonAnimator;
+    private AudioSource audioSource;
     private static bool switchState = false;
     public float maxDistance;
     public GameObject splash;
@@ -23,6 +24,7 @@ public class ButtonBehaviour : MonoBehaviour
     {
         meshRenderer = gameObject.GetComponent<MeshRenderer>();
         buttonAnimator = gameObject.GetComponent<Animator>();
+        audioSource = gameObject.GetComponent<AudioSource>();
         splash.SetActive(false);
         allButtons.Add(this);
     }
@@ -44,7 +46,7 @@ public class ButtonBehaviour : MonoBehaviour
     private void Switch()
     {
         switchState = !switchState;
-
+        audioSource.Play();
         foreach (ButtonBehaviour button in allButtons)
         {
 
