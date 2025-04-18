@@ -23,4 +23,20 @@ public class DoorBehaviour : MonoBehaviour
     {
         doorAnimator.SetTrigger("ToggleDoor");
     }
+
+    private void OnTriggerEnter(Collider other)
+    {
+        if (other.CompareTag("Player"))
+        {
+            doorAnimator.Play("doorOpen");
+        }
+    }
+
+    private void OnTriggerExit(Collider other)
+    {
+        if (other.CompareTag("Player"))
+        {
+            doorAnimator.Play("doorClose");
+        }
+    }
 }
