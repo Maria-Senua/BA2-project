@@ -56,6 +56,7 @@ public class PlayerController : MonoBehaviour
         else
         {
             verticalMovement -= gravity * Time.deltaTime;
+           
         }
 
 
@@ -76,10 +77,16 @@ public class PlayerController : MonoBehaviour
             gameObject.transform.Rotate(Vector3.up, -rotationSpeed * Time.deltaTime);
         }
 
-        moveDirection = moveDirection.normalized * speed * Time.deltaTime;
-        moveDirection.y = verticalMovement * Time.deltaTime;
+        Vector3 finalMove = moveDirection.normalized * speed * Time.deltaTime;
 
-        characterController.Move(moveDirection);
+        finalMove.y = verticalMovement * Time.deltaTime;
+
+        if (characterController.isGrounded)
+        {
+            finalMove += PlatformBehaviour.currentDelta;
+        }
+
+        characterController.Move(finalMove);
 
     }
 

@@ -14,6 +14,7 @@ public class ButtonBehaviour : MonoBehaviour
     private static bool switchState = false;
     public float maxDistance;
     public GameObject splash;
+    public int groupID = 0;
 
     private static List<ButtonBehaviour> allButtons = new List<ButtonBehaviour>();
 
@@ -49,9 +50,12 @@ public class ButtonBehaviour : MonoBehaviour
         audioSource.Play();
         foreach (ButtonBehaviour button in allButtons)
         {
-
-            button.ChangeButtonMaterial();
-            button.PressButtonAnim();
+            if (button.groupID == this.groupID)
+            {
+                button.ChangeButtonMaterial();
+                button.PressButtonAnim();
+            }
+                
            
         }
             
