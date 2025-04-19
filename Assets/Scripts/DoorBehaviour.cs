@@ -4,8 +4,26 @@ using UnityEngine;
 
 public class DoorBehaviour : MonoBehaviour
 {
+    public enum DoorState
+    {
+        Locked,
+        Unlocked,
+        Open
+    }
+
+    private DoorState currentState = DoorState.Locked;
+
+    public enum DoorType
+    {
+        Locked,         
+        Automatic       
+    }
+
+    public DoorType doorType = DoorType.Automatic;
+
 
     private Animator doorAnimator;
+
 
     // Start is called before the first frame update
     void Start()
@@ -28,7 +46,10 @@ public class DoorBehaviour : MonoBehaviour
     {
         if (other.CompareTag("Player"))
         {
-            doorAnimator.Play("doorOpen");
+            if (doorType == DoorType.Automatic || currentState == DoorState.Unlocked)
+            {
+                OpenDoor();
+            }
         }
     }
 
@@ -36,7 +57,25 @@ public class DoorBehaviour : MonoBehaviour
     {
         if (other.CompareTag("Player"))
         {
-            doorAnimator.Play("doorClose");
+           if (doorType == DoorType.Automatic) doorAnimator.Play("doorClose");
         }
+    }
+
+    
+
+    public void OpenDoor()
+    {
+        doorAnimator.Play("doorOpen");
+        currentState = DoorState.Open;
+    }
+
+    public void UnlockDoor()
+    {
+        currentState = DoorState.Unlocked;
+    }
+
+    public void LockDoor()
+    {
+        currentState = DoorState.Locked;
     }
 }

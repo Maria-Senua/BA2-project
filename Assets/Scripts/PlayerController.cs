@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Events;
 
 public class PlayerController : MonoBehaviour
 {
@@ -20,6 +21,9 @@ public class PlayerController : MonoBehaviour
     public float gravity = 9.81f;
     private float verticalMovement;
     public float jumpHeight;
+
+    public GameObject keyIcon;
+    public UnityEvent onKeyPickup;
 
     private void Awake()
     {
@@ -77,5 +81,15 @@ public class PlayerController : MonoBehaviour
 
         characterController.Move(moveDirection);
 
+    }
+
+    private void OnTriggerEnter(Collider other)
+    {
+        if (other.CompareTag("Key"))
+        {
+            other.gameObject.SetActive(false);
+            keyIcon.SetActive(true);
+            onKeyPickup.Invoke();
+        }
     }
 }
