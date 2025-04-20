@@ -1,21 +1,18 @@
 ﻿<Properties StartupConfiguration="{752E0DE0-251B-4257-504B-EB41A7F4398E}|">
-  <MonoDevelop.Ide.DebuggingService.Breakpoints>
-    <BreakpointStore />
-  </MonoDevelop.Ide.DebuggingService.Breakpoints>
-  <MonoDevelop.Ide.DebuggingService.PinnedWatches />
-  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
-  <MonoDevelop.Ide.ItemProperties.Assembly-CSharp PreferredExecutionTarget="2d28320a-463a-427d-af51-ca0121ab7bb0" />
   <MultiItemStartupConfigurations />
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/Scripts/DoorBehaviour.cs">
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
+  <MonoDevelop.Ide.ItemProperties.Assembly-CSharp PreferredExecutionTarget="ea6832a4-5c32-4768-afb1-fe1bf71a871b" />
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/Scripts/PlayerController.cs">
     <Files>
-      <File FileName="Assets/Scripts/PlayerController.cs" Line="14" Column="57" />
-      <File FileName="Assets/Scripts/ButtonBehaviour.cs" Line="3" Column="19" />
-      <File FileName="Assets/Scripts/DoorBehaviour.cs" Line="39" Column="41" />
+      <File FileName="Assets/Scripts/PlayerController.cs" Line="84" Column="4" />
+      <File FileName="Assets/Scripts/ButtonBehaviour.cs" Line="56" Column="42" />
+      <File FileName="Assets/Scripts/DoorBehaviour.cs" Line="65" Column="1" />
+      <File FileName="Assets/Scripts/PlatformBehaviour.cs" Line="16" Column="1" />
     </Files>
     <Pads>
       <Pad Id="ProjectPad">
         <State name="__root__">
-          <Node name="BA2-GP2" expanded="True">
+          <Node name="BA2-GP2">
             <Node name="Assets" expanded="True">
               <Node name="Scripts" expanded="True" />
             </Node>
@@ -24,4 +21,8 @@
       </Pad>
     </Pads>
   </MonoDevelop.Ide.Workbench>
+  <MonoDevelop.Ide.DebuggingService.Breakpoints>
+    <BreakpointStore />
+  </MonoDevelop.Ide.DebuggingService.Breakpoints>
+  <MonoDevelop.Ide.DebuggingService.PinnedWatches />
 </Properties>

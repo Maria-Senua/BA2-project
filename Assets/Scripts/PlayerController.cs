@@ -81,7 +81,7 @@ public class PlayerController : MonoBehaviour
 
         finalMove.y = verticalMovement * Time.deltaTime;
 
-        if (characterController.isGrounded)
+        if (characterController.isGrounded && PlatformBehaviour.currentDelta != Vector3.zero)
         {
             finalMove += PlatformBehaviour.currentDelta;
         }

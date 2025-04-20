@@ -39,13 +39,14 @@ public class PlatformBehaviour : MonoBehaviour
     {
         if (transform.position == originalPosition)
         {
-            targetPosition = originalPosition + Vector3.up * moveDistance; 
+            targetPosition = originalPosition + Vector3.up * moveDistance;
         }
         else
         {
-            targetPosition = originalPosition; 
+            targetPosition = originalPosition;
         }
     }
 
-    
+
+
 }
