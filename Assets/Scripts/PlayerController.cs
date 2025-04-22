@@ -25,6 +25,10 @@ public class PlayerController : MonoBehaviour
     public GameObject keyIcon;
     public UnityEvent onKeyPickup;
 
+    private Transform currentPlatform = null;
+    private Transform previousPlatform = null;
+
+
     private void Awake()
     {
         characterController = gameObject.GetComponent<CharacterController>();
@@ -37,21 +41,72 @@ public class PlayerController : MonoBehaviour
 
     }
 
+    private void Jump()
+    {
+        verticalMovement = Mathf.Sqrt(jumpHeight * 2f * gravity);
+        currentState = PlayerState.JUMP;
+    }
+
+    private void SetMovementDirection(float movementFactor = 1.0f)
+    {
+
+        if (Input.GetKey(KeyCode.W))
+        {
+            moveDirection = gameObject.transform.forward * movementFactor;
+        }
+        if (Input.GetKey(KeyCode.S))
+        {
+            moveDirection = -gameObject.transform.forward * movementFactor;
+        }
+    }
+
+    private void StateUpdate()
+    {
+        switch (currentState)
+        {
+            case PlayerState.IDLE:
+                if (Input.GetKeyDown(KeyCode.Space))
+                {
+                    Jump();   
+                } else if (Input.GetKey(KeyCode.W) || Input.GetKey(KeyCode.S))
+                {
+                    currentState = PlayerState.WALK;
+                }
+                break;
+
+            case PlayerState.WALK:
+
+                SetMovementDirection();
+
+                if (Input.GetKeyDown(KeyCode.Space))
+                {
+                    Jump();
+                } else if (!Input.GetKey(KeyCode.W) && !Input.GetKey(KeyCode.S))
+                {
+                    currentState = PlayerState.IDLE;
+                }
+                break;
+
+            case PlayerState.JUMP:
+                if (characterController.isGrounded)
+                {
+                    currentState = PlayerState.IDLE;
+                }
+                SetMovementDirection(0.25f);
+                break;
+        }
+    }
+
     // Update is called once per frame
     void Update()
     {
-        moveDirection = Vector3.zero;
+        
 
         if (characterController.isGrounded)
         {
-            if (Input.GetKeyDown(KeyCode.Space))
-            {
-                verticalMovement = Mathf.Sqrt(jumpHeight * 2f * gravity);
-            }
-            else if (verticalMovement <= 0f) 
-            {
-                verticalMovement = -1f;
-            }
+           
+             verticalMovement = -1f;
+            
         }
         else
         {
@@ -59,15 +114,8 @@ public class PlayerController : MonoBehaviour
            
         }
 
+        moveDirection = Vector3.zero;
 
-        if (Input.GetKey(KeyCode.W))
-        {
-            moveDirection = gameObject.transform.forward;
-        }
-        if (Input.GetKey(KeyCode.S))
-        {
-            moveDirection = -gameObject.transform.forward;
-        }
         if (Input.GetKey(KeyCode.D))
         {
             gameObject.transform.Rotate(Vector3.up, rotationSpeed * Time.deltaTime);
@@ -77,16 +125,51 @@ public class PlayerController : MonoBehaviour
             gameObject.transform.Rotate(Vector3.up, -rotationSpeed * Time.deltaTime);
         }
 
+        StateUpdate();
+
         Vector3 finalMove = moveDirection.normalized * speed * Time.deltaTime;
 
         finalMove.y = verticalMovement * Time.deltaTime;
 
-        if (characterController.isGrounded && PlatformBehaviour.currentDelta != Vector3.zero)
+        if (characterController.isGrounded)
         {
-            finalMove += PlatformBehaviour.currentDelta;
+            RaycastHit hit;
+            if (Physics.Raycast(transform.position, Vector3.down, out hit, 1.5f)) 
+            {
+                PlatformBehaviour platform = hit.collider.GetComponent<PlatformBehaviour>();
+                if (platform != null)
+                {
+                    currentPlatform = platform.transform;
+                }
+                else
+                {
+                    currentPlatform = null;
+                }
+            }
+        }
+        else
+        {
+            currentPlatform = null;
         }
 
+       
+
         characterController.Move(finalMove);
+
+        if (currentPlatform != previousPlatform)
+        {
+            if (currentPlatform != null)
+            {
+                transform.SetParent(currentPlatform); 
+            }
+            else
+            {
+                transform.SetParent(null); 
+            }
+
+            previousPlatform = currentPlatform;
+        }
+
 
     }
 
