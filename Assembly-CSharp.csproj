@@ -62,6 +62,7 @@
   <ItemGroup>
     <Compile Include="Assets/Scripts/PlatformBehaviour.cs" />
     <Compile Include="Assets/Scripts/DoorBehaviour.cs" />
+    <Compile Include="Assets/Scripts/CoffeeBehaviour.cs" />
     <Compile Include="Assets/Scripts/ButtonBehaviour.cs" />
     <Compile Include="Assets/Scripts/Interactable.cs" />
     <Compile Include="Assets/Scripts/PlayerController.cs" />
