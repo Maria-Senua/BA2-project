@@ -16,6 +16,9 @@ public class ButtonBehaviour : MonoBehaviour
     public GameObject splash;
     public int groupID = 0;
 
+    private bool isPouring = false;
+    public GameObject coffeeLiquid;
+
     private static List<ButtonBehaviour> allButtons = new List<ButtonBehaviour>();
 
     public UnityEvent onButtonPress;
@@ -40,7 +43,7 @@ public class ButtonBehaviour : MonoBehaviour
     {
         if (Vector3.Distance(gameObject.transform.position, Camera.main.transform.position) < maxDistance)
         {
-            Switch();
+            if (!isPouring) Switch();
         }
     }
 
@@ -55,11 +58,31 @@ public class ButtonBehaviour : MonoBehaviour
                 button.ChangeButtonMaterial();
                 button.PressButtonAnim();
             }
-                
-           
+
+            if (button.groupID == 2)
+            {
+                isPouring = switchState;
+                Invoke("PourCoffee", 1.5f);
+                Invoke("Return", 4f);
+            } 
         }
             
         onButtonPress.Invoke();
+    }
+
+    private void PourCoffee()
+    {
+        coffeeLiquid.SetActive(true);
+    }
+
+    private void Return()
+    {
+        if (groupID == 2)
+        {
+            switchState = !switchState;
+            isPouring = switchState;
+            ChangeButtonMaterial();
+        }
     }
 
     private void PressButtonAnim()
