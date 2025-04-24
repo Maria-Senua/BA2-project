@@ -17,7 +17,7 @@ public class ButtonBehaviour : MonoBehaviour
     public int groupID = 0;
 
     private bool isPouring = false;
-    public GameObject coffeeLiquid;
+   
 
     private static List<ButtonBehaviour> allButtons = new List<ButtonBehaviour>();
 
@@ -62,7 +62,7 @@ public class ButtonBehaviour : MonoBehaviour
             if (button.groupID == 2)
             {
                 isPouring = switchState;
-                Invoke("PourCoffee", 1.5f);
+                //Invoke("PourCoffee", 1.5f);
                 Invoke("Return", 4f);
             } 
         }
@@ -70,10 +70,7 @@ public class ButtonBehaviour : MonoBehaviour
         onButtonPress.Invoke();
     }
 
-    private void PourCoffee()
-    {
-        coffeeLiquid.SetActive(true);
-    }
+  
 
     private void Return()
     {

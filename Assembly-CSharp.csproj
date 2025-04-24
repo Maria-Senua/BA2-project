@@ -65,6 +65,7 @@
     <Compile Include="Assets/Scripts/CoffeeBehaviour.cs" />
     <Compile Include="Assets/Scripts/ButtonBehaviour.cs" />
     <Compile Include="Assets/Scripts/Interactable.cs" />
+    <Compile Include="Assets/Scripts/Billboard.cs" />
     <Compile Include="Assets/Scripts/PlayerController.cs" />
   </ItemGroup>
   <ItemGroup>
