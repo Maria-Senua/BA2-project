@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+//using System.Numerics;
 using TMPro;
 using UnityEngine;
 
@@ -21,7 +22,7 @@ public class CoffeeBehaviour : MonoBehaviour
         if (!isEmpty && Vector3.Distance(transform.position, Camera.main.transform.position) < interactionDistance)
         {
             
-            isDrinking = true;
+            isDrinking = true; //rotation x -54
         }
 
     }
@@ -29,6 +30,7 @@ public class CoffeeBehaviour : MonoBehaviour
     private void DrinkCoffee()
     {
         transform.position = Vector3.MoveTowards(transform.position, bocca.transform.position, moveSpeed * Time.deltaTime);
+        transform.rotation = Quaternion.AngleAxis(-54f, Vector3.right);
     }
 
     // Start is called before the first frame update
