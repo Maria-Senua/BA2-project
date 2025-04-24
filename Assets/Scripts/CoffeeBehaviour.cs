@@ -29,6 +29,7 @@ public class CoffeeBehaviour : MonoBehaviour
 
     private void DrinkCoffee()
     {
+        drinkMeLabel.SetActive(false);
         transform.position = Vector3.MoveTowards(transform.position, bocca.transform.position, moveSpeed * Time.deltaTime);
         transform.rotation = Quaternion.AngleAxis(-54f, Vector3.right);
         StartCoroutine(FinishDrinking());

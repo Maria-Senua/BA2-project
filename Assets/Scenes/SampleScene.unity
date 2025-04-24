@@ -2849,7 +2849,6 @@ MonoBehaviour:
   interactionDistance: 3
   moveSpeed: 1.5
   bocca: {fileID: 1915288246}
-  drinkingTime: 2
 --- !u!65 &1183641244
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -4399,6 +4398,10 @@ PrefabInstance:
       propertyPath: playOnAwake
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 1749045753919366396, guid: 64e88b7b9ed6fe84e8cb3497ce686b23, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 2459492688310315750, guid: 64e88b7b9ed6fe84e8cb3497ce686b23, type: 3}
       propertyPath: m_Name
       value: PF_CoffeeMachine
@@ -4458,6 +4461,10 @@ PrefabInstance:
     - target: {fileID: 7289154636893482650, guid: 64e88b7b9ed6fe84e8cb3497ce686b23, type: 3}
       propertyPath: m_IsActive
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7760039950031132998, guid: 64e88b7b9ed6fe84e8cb3497ce686b23, type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8137231119498600036, guid: 64e88b7b9ed6fe84e8cb3497ce686b23, type: 3}
       propertyPath: m_IsActive
