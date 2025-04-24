@@ -22,7 +22,7 @@ public class CoffeeBehaviour : MonoBehaviour
         if (!isEmpty && Vector3.Distance(transform.position, Camera.main.transform.position) < interactionDistance)
         {
             
-            isDrinking = true; //rotation x -54
+            isDrinking = true;
         }
 
     }
@@ -31,12 +31,29 @@ public class CoffeeBehaviour : MonoBehaviour
     {
         transform.position = Vector3.MoveTowards(transform.position, bocca.transform.position, moveSpeed * Time.deltaTime);
         transform.rotation = Quaternion.AngleAxis(-54f, Vector3.right);
+        StartCoroutine(FinishDrinking());
+        StartCoroutine(PutCupBack());
     }
 
     // Start is called before the first frame update
     void Start()
     {
+        originalPosition = transform.position;
+    }
+
+    private IEnumerator FinishDrinking()
+    {
+        yield return new WaitForSeconds(1.5f);
+        coffeeLiquid.SetActive(false);
         
+    }
+
+    private IEnumerator PutCupBack()
+    {
+        yield return new WaitForSeconds(2f);
+        transform.position = Vector3.MoveTowards(transform.position, originalPosition, moveSpeed * Time.deltaTime); ;
+        transform.rotation = Quaternion.AngleAxis(-82f, Vector3.right);
+        isDrinking = false;
     }
 
     // Update is called once per frame

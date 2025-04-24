@@ -2849,6 +2849,7 @@ MonoBehaviour:
   interactionDistance: 3
   moveSpeed: 1.5
   bocca: {fileID: 1915288246}
+  drinkingTime: 2
 --- !u!65 &1183641244
 BoxCollider:
   m_ObjectHideFlags: 0
