@@ -19,7 +19,7 @@ MonoBehaviour:
     width: 1440
     height: 791
   m_ShowMode: 4
-  m_Title: Hierarchy
+  m_Title: Game
   m_RootView: {fileID: 2}
   m_MinSize: {x: 875, y: 492}
   m_MaxSize: {x: 10000, y: 10000}
@@ -121,7 +121,7 @@ MonoBehaviour:
   m_MinSize: {x: 400, y: 100}
   m_MaxSize: {x: 32384, y: 16192}
   vertical: 0
-  controlID: 14493
+  controlID: 2457
   draggingID: 0
 --- !u!114 &6
 MonoBehaviour:
@@ -147,7 +147,7 @@ MonoBehaviour:
   m_MinSize: {x: 100, y: 100}
   m_MaxSize: {x: 8096, y: 16192}
   vertical: 1
-  controlID: 14494
+  controlID: 2458
   draggingID: 0
 --- !u!114 &7
 MonoBehaviour:
@@ -203,7 +203,7 @@ MonoBehaviour:
   - {fileID: 15}
   - {fileID: 16}
   m_Selected: 0
-  m_LastSelected: 1
+  m_LastSelected: 2
 --- !u!114 &9
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -750,9 +750,9 @@ MonoBehaviour:
   m_PlayAudio: 0
   m_AudioPlay: 0
   m_Position:
-    m_Target: {x: -0.11077375, y: 0.7438798, z: 0.4284553}
+    m_Target: {x: 0.79432696, y: -4.6712313, z: -5.8170977}
     speed: 2
-    m_Value: {x: -0.11077375, y: 0.7438798, z: 0.4284553}
+    m_Value: {x: 0.79432696, y: -4.6712313, z: -5.8170977}
   m_RenderMode: 0
   m_CameraMode:
     drawMode: 0
@@ -798,20 +798,20 @@ MonoBehaviour:
     m_GridAxis: 1
     m_gridOpacity: 0.5
   m_Rotation:
-    m_Target: {x: 0.13543725, y: 0.86446583, z: -0.3492948, w: 0.33519328}
+    m_Target: {x: -0.023632042, y: -0.9327643, z: 0.3542932, w: -0.062215984}
     speed: 2
-    m_Value: {x: 0.13543724, y: 0.8644658, z: -0.34929478, w: 0.33519325}
+    m_Value: {x: 0.02363204, y: 0.9327643, z: -0.3542932, w: 0.06221598}
   m_Size:
-    m_Target: 0.09413401
+    m_Target: 4.4392986
     speed: 2
-    m_Value: 0.09413401
+    m_Value: 4.4392986
   m_Ortho:
     m_Target: 0
     speed: 2
     m_Value: 0
   m_CameraSettings:
-    m_Speed: 0.9992009
-    m_SpeedNormalized: 0.49708587
+    m_Speed: 1.0001959
+    m_SpeedNormalized: 0.49758586
     m_SpeedMin: 0.01
     m_SpeedMax: 2
     m_EasingEnabled: 1
@@ -1003,7 +1003,7 @@ MonoBehaviour:
     m_OverlaysVisible: 1
   m_LockTracker:
     m_IsLocked: 0
-  m_LastSelectedObjectID: -2892
+  m_LastSelectedObjectID: 23378
 --- !u!114 &17
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -1041,9 +1041,9 @@ MonoBehaviour:
   m_SceneHierarchy:
     m_TreeViewState:
       scrollPos: {x: 0, y: 0}
-      m_SelectedIDs: 
-      m_LastClickedID: 0
-      m_ExpandedIDs: a2f4ffffc0f4ffffc4f4ffffa2faffffe0faffff30fbffff
+      m_SelectedIDs: 525b0000
+      m_LastClickedID: 23378
+      m_ExpandedIDs: 0afbffff0efbffff30fbffff345b0000
       m_RenameOverlay:
         m_UserAcceptedRename: 0
         m_Name: 
@@ -1059,7 +1059,7 @@ MonoBehaviour:
         m_IsRenaming: 0
         m_OriginalEventType: 11
         m_IsRenamingFilename: 0
-        m_ClientGUIView: {fileID: 9}
+        m_ClientGUIView: {fileID: 0}
       m_SearchString: 
     m_ExpandedScenes: []
     m_CurrenRootInstanceID: 0
@@ -1112,7 +1112,7 @@ MonoBehaviour:
     m_SkipHidden: 0
     m_SearchArea: 1
     m_Folders:
-    - Assets/Lecture_Resources/InterimAssignment
+    - Assets/Scripts
     m_Globs: []
     m_OriginalText: 
     m_ImportLogFlags: 0
@@ -1120,16 +1120,16 @@ MonoBehaviour:
   m_ViewMode: 1
   m_StartGridSize: 16
   m_LastFolders:
-  - Assets/Lecture_Resources/InterimAssignment
+  - Assets/Scripts
   m_LastFoldersGridSize: 16
   m_LastProjectPath: /Users/mariasmirnova/Desktop/MARIA/CGL/_Studium/BA2/Game Programming/Session1/BA2-GP2
   m_LockTracker:
     m_IsLocked: 0
   m_FolderTreeState:
     scrollPos: {x: 0, y: 0}
-    m_SelectedIDs: a25c0000
-    m_LastClickedID: 23714
-    m_ExpandedIDs: 00000000645c0000665c000000ca9a3bffffff7f
+    m_SelectedIDs: 525d0000
+    m_LastClickedID: 23890
+    m_ExpandedIDs: 00000000165d0000185d000000ca9a3bffffff7f
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -1157,7 +1157,7 @@ MonoBehaviour:
     scrollPos: {x: 0, y: 0}
     m_SelectedIDs: 
     m_LastClickedID: 0
-    m_ExpandedIDs: 00000000645c0000665c000000ca9a3bffffff7f
+    m_ExpandedIDs: 00000000165d0000185d000000ca9a3bffffff7f
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -1201,7 +1201,7 @@ MonoBehaviour:
       m_IsRenaming: 0
       m_OriginalEventType: 11
       m_IsRenamingFilename: 1
-      m_ClientGUIView: {fileID: 0}
+      m_ClientGUIView: {fileID: 10}
     m_CreateAssetUtility:
       m_EndAction: {fileID: 0}
       m_InstanceID: 0

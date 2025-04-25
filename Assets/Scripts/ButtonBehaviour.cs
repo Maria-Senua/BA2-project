@@ -11,15 +11,16 @@ public class ButtonBehaviour : MonoBehaviour
     public Animator doorAnimator;
     private Animator buttonAnimator;
     private AudioSource audioSource;
-    private static bool switchState = false;
     public float maxDistance;
     public GameObject splash;
     public int groupID = 0;
 
     private bool isPouring = false;
-   
+    //public CoffeeBehaviour coffeeCup;
+
 
     private static List<ButtonBehaviour> allButtons = new List<ButtonBehaviour>();
+    private static Dictionary<int, bool> groupStates = new Dictionary<int, bool>();
 
     public UnityEvent onButtonPress;
 
@@ -31,6 +32,11 @@ public class ButtonBehaviour : MonoBehaviour
         audioSource = gameObject.GetComponent<AudioSource>();
         splash.SetActive(false);
         allButtons.Add(this);
+
+        if (!groupStates.ContainsKey(groupID))
+        {
+            groupStates[groupID] = false; 
+        }
     }
 
     // Update is called once per frame
@@ -43,13 +49,15 @@ public class ButtonBehaviour : MonoBehaviour
     {
         if (Vector3.Distance(gameObject.transform.position, Camera.main.transform.position) < maxDistance)
         {
-            if (!isPouring) Switch();
+            if (groupID == 2 && isPouring) return;
+            Switch();
+                
         }
     }
 
     private void Switch()
     {
-        switchState = !switchState;
+        groupStates[groupID] = !groupStates[groupID];
         audioSource.Play();
         foreach (ButtonBehaviour button in allButtons)
         {
@@ -61,8 +69,7 @@ public class ButtonBehaviour : MonoBehaviour
 
             if (button.groupID == 2)
             {
-                isPouring = switchState;
-                //Invoke("PourCoffee", 1.5f);
+                button.isPouring = groupStates[groupID];
                 Invoke("Return", 4f);
             } 
         }
@@ -76,8 +83,8 @@ public class ButtonBehaviour : MonoBehaviour
     {
         if (groupID == 2)
         {
-            switchState = !switchState;
-            isPouring = switchState;
+            groupStates[groupID] = false;
+            isPouring = false;
             ChangeButtonMaterial();
         }
     }
@@ -90,16 +97,13 @@ public class ButtonBehaviour : MonoBehaviour
 
     private void ChangeButtonMaterial()
     {
-        if (switchState == true)
-        {
-            meshRenderer.material = mActive;
-            splash.SetActive(true);
+        bool state = groupStates[groupID];
 
-        }
-        else
+        meshRenderer.material = state ? mActive : mInactive;
+
+        if (groupID == 2 || groupID == 0)
         {
-            meshRenderer.material = mInactive;
-            splash.SetActive(false);
+            splash.SetActive(state);
         }
     }
   

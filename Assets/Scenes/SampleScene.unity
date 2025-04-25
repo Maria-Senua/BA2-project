@@ -741,6 +741,7 @@ MonoBehaviour:
   maxDistance: 3
   splash: {fileID: 2078316034}
   groupID: 1
+  coffeeCup: {fileID: 0}
   onButtonPress:
     m_PersistentCalls:
       m_Calls:
@@ -1631,6 +1632,7 @@ MonoBehaviour:
   maxDistance: 3
   splash: {fileID: 2078316034}
   groupID: 0
+  coffeeCup: {fileID: 0}
   onButtonPress:
     m_PersistentCalls:
       m_Calls:
@@ -2846,6 +2848,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   coffeeLiquid: {fileID: 732796658}
   drinkMeLabel: {fileID: 1196478075}
+  isEmpty: 1
   interactionDistance: 3
   moveSpeed: 1.5
   bocca: {fileID: 1915288246}
@@ -3289,6 +3292,7 @@ MonoBehaviour:
   maxDistance: 1.5
   splash: {fileID: 1297578615}
   groupID: 2
+  coffeeCup: {fileID: 1183641243}
   onButtonPress:
     m_PersistentCalls:
       m_Calls:
@@ -3535,6 +3539,7 @@ MonoBehaviour:
   maxDistance: 3
   splash: {fileID: 2078316034}
   groupID: 0
+  coffeeCup: {fileID: 0}
   onButtonPress:
     m_PersistentCalls:
       m_Calls:
@@ -4176,6 +4181,7 @@ MonoBehaviour:
   maxDistance: 3
   splash: {fileID: 2078316034}
   groupID: 1
+  coffeeCup: {fileID: 0}
   onButtonPress:
     m_PersistentCalls:
       m_Calls:

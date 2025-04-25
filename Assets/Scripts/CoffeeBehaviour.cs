@@ -9,7 +9,7 @@ public class CoffeeBehaviour : MonoBehaviour
 
     public GameObject coffeeLiquid;
     public GameObject drinkMeLabel;
-    private bool isEmpty = true;
+    [SerializeField] public bool isEmpty = true;
     public float interactionDistance = 1.5f;
     private bool isDrinking = false;
 
@@ -32,7 +32,7 @@ public class CoffeeBehaviour : MonoBehaviour
         drinkMeLabel.SetActive(false);
         transform.position = Vector3.MoveTowards(transform.position, bocca.transform.position, moveSpeed * Time.deltaTime);
         transform.rotation = Quaternion.AngleAxis(-54f, Vector3.right);
-        StartCoroutine(FinishDrinking());
+        StartCoroutine(EndOfDrinking());
         StartCoroutine(PutCupBack());
     }
 
@@ -42,7 +42,7 @@ public class CoffeeBehaviour : MonoBehaviour
         originalPosition = transform.position;
     }
 
-    private IEnumerator FinishDrinking()
+    private IEnumerator EndOfDrinking()
     {
         yield return new WaitForSeconds(1.5f);
         coffeeLiquid.SetActive(false);
@@ -55,6 +55,7 @@ public class CoffeeBehaviour : MonoBehaviour
         transform.position = Vector3.MoveTowards(transform.position, originalPosition, moveSpeed * Time.deltaTime); ;
         transform.rotation = Quaternion.AngleAxis(-82f, Vector3.right);
         isDrinking = false;
+        isEmpty = true;
     }
 
     // Update is called once per frame
