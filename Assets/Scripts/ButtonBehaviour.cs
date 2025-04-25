@@ -16,7 +16,7 @@ public class ButtonBehaviour : MonoBehaviour
     public int groupID = 0;
 
     private bool isPouring = false;
-    //public CoffeeBehaviour coffeeCup;
+    public CoffeeBehaviour coffeeCup;
 
 
     private static List<ButtonBehaviour> allButtons = new List<ButtonBehaviour>();
@@ -57,6 +57,12 @@ public class ButtonBehaviour : MonoBehaviour
 
     private void Switch()
     {
+        if (groupID == 2)
+        {
+            if (coffeeCup == null || !coffeeCup.isEmpty)
+                return;
+        }
+
         groupStates[groupID] = !groupStates[groupID];
         audioSource.Play();
         foreach (ButtonBehaviour button in allButtons)
@@ -101,7 +107,12 @@ public class ButtonBehaviour : MonoBehaviour
 
         meshRenderer.material = state ? mActive : mInactive;
 
-        if (groupID == 2 || groupID == 0)
+        if (groupID == 2)
+        {
+            bool showSplash = state && coffeeCup != null && coffeeCup.isEmpty;
+            splash.SetActive(showSplash);
+        }
+        else
         {
             splash.SetActive(state);
         }
