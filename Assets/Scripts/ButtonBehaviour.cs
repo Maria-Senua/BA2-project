@@ -17,6 +17,7 @@ public class ButtonBehaviour : MonoBehaviour
 
     private bool isPouring = false;
     public CoffeeBehaviour coffeeCup;
+    
 
 
     private static List<ButtonBehaviour> allButtons = new List<ButtonBehaviour>();
@@ -42,7 +43,7 @@ public class ButtonBehaviour : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-
+        
     }
 
     private void OnMouseDown()
@@ -59,7 +60,7 @@ public class ButtonBehaviour : MonoBehaviour
     {
         if (groupID == 2)
         {
-            if (coffeeCup == null || !coffeeCup.isEmpty)
+            if (coffeeCup == null || !coffeeCup.isEmpty || coffeeCup.cupsNum == 0)
                 return;
         }
 
@@ -109,7 +110,7 @@ public class ButtonBehaviour : MonoBehaviour
 
         if (groupID == 2)
         {
-            bool showSplash = state && coffeeCup != null && coffeeCup.isEmpty;
+            bool showSplash = state && coffeeCup != null && coffeeCup.isEmpty && coffeeCup.cupsNum > 0;
             splash.SetActive(showSplash);
         }
         else

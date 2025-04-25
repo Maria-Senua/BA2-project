@@ -3,6 +3,7 @@ using System.Collections.Generic;
 //using System.Numerics;
 using TMPro;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class CoffeeBehaviour : MonoBehaviour
 {
@@ -16,6 +17,10 @@ public class CoffeeBehaviour : MonoBehaviour
     private Vector3 originalPosition;
     public float moveSpeed = 1.5f;
     public GameObject bocca;
+    public GameObject beansIndicator;
+    public int cupsNum = 5;
+    public Sprite usedBean; 
+
 
     public void OnMouseDown()
     {
@@ -62,6 +67,15 @@ public class CoffeeBehaviour : MonoBehaviour
     void Update()
     {
         if (isDrinking) DrinkCoffee();
+
+        if (Vector3.Distance(gameObject.transform.position, Camera.main.transform.position) < interactionDistance)
+        {
+            beansIndicator.SetActive(true);
+        }
+        else
+        {
+            beansIndicator.SetActive(false);
+        }
     }
 
     public void FinishPuoringCoffee()
@@ -74,6 +88,23 @@ public class CoffeeBehaviour : MonoBehaviour
         coffeeLiquid.SetActive(true);
         drinkMeLabel.SetActive(true);
         isEmpty = false;
+        cupsNum--;
+        UpdateBeansIndicator();
+    }
+
+    private void UpdateBeansIndicator()
+    {
+        int index = 5 - cupsNum - 1; 
+
+        if (index >= 0 && index < beansIndicator.transform.childCount)
+        {
+            Transform child = beansIndicator.transform.GetChild(index);
+            Image img = child.GetComponent<Image>();
+            if (img != null)
+            {
+                img.sprite = usedBean;
+            }
+        }
     }
 
 }

@@ -2637,7 +2637,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &915563176
 RectTransform:
   m_ObjectHideFlags: 0
@@ -2657,9 +2657,9 @@ RectTransform:
   - {fileID: 1250507876}
   m_Father: {fileID: 1351091067}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.5, y: 0.5}
-  m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -43.5, y: 186}
+  m_AnchorMin: {x: 0.5, y: 1}
+  m_AnchorMax: {x: 0.5, y: 1}
+  m_AnchoredPosition: {x: -43.5, y: -39}
   m_SizeDelta: {x: 203.75299, y: 42.75299}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!4 &927427529 stripped
@@ -3114,9 +3114,12 @@ MonoBehaviour:
   coffeeLiquid: {fileID: 732796658}
   drinkMeLabel: {fileID: 1196478075}
   isEmpty: 1
-  interactionDistance: 3
+  interactionDistance: 1.5
   moveSpeed: 1.5
   bocca: {fileID: 1915288246}
+  beansIndicator: {fileID: 915563175}
+  cupsNum: 5
+  usedBean: {fileID: 21300000, guid: adc0ec9d5d6a646b69a48245187a60a7, type: 3}
 --- !u!65 &1183641244
 BoxCollider:
   m_ObjectHideFlags: 0
