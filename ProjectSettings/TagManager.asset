@@ -6,6 +6,7 @@ TagManager:
   tags:
   - Key
   - MovingPlatform
+  - Machine
   layers:
   - Default
   - TransparentFX

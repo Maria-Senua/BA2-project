@@ -15,9 +15,7 @@ public class ButtonBehaviour : MonoBehaviour
     public GameObject splash;
     public int groupID = 0;
 
-    private bool isPouring = false;
-    public CoffeeBehaviour coffeeCup;
-    
+    private bool isPouring = false;    
 
 
     private static List<ButtonBehaviour> allButtons = new List<ButtonBehaviour>();
@@ -60,7 +58,7 @@ public class ButtonBehaviour : MonoBehaviour
     {
         if (groupID == 2)
         {
-            if (coffeeCup == null || !coffeeCup.isEmpty || coffeeCup.cupsNum == 0)
+            if (!CoffeeBehaviour.instance.isEmpty || CoffeeBehaviour.instance.cupsNum == 0)
                 return;
         }
 
@@ -110,7 +108,7 @@ public class ButtonBehaviour : MonoBehaviour
 
         if (groupID == 2)
         {
-            bool showSplash = state && coffeeCup != null && coffeeCup.isEmpty && coffeeCup.cupsNum > 0;
+            bool showSplash = state && CoffeeBehaviour.instance.isEmpty && CoffeeBehaviour.instance.cupsNum > 0;
             splash.SetActive(showSplash);
         }
         else

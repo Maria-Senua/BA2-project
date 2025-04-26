@@ -2,11 +2,13 @@ using System.Collections;
 using System.Collections.Generic;
 //using System.Numerics;
 using TMPro;
+using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.UI;
 
 public class CoffeeBehaviour : MonoBehaviour
 {
+    public static CoffeeBehaviour instance;
 
     public GameObject coffeeLiquid;
     public GameObject drinkMeLabel;
@@ -19,8 +21,14 @@ public class CoffeeBehaviour : MonoBehaviour
     public GameObject bocca;
     public GameObject beansIndicator;
     public int cupsNum = 5;
-    public Sprite usedBean; 
+    public Sprite usedBean;
+    public Sprite filledBean;
 
+
+    private void Awake()
+    {
+        if (instance == null) instance = this;
+    }
 
     public void OnMouseDown()
     {
@@ -107,4 +115,17 @@ public class CoffeeBehaviour : MonoBehaviour
         }
     }
 
+    public void RefillBean()
+    {
+        if (cupsNum < 5)
+        {
+            Transform child = beansIndicator.transform.GetChild(cupsNum);
+            Image img = child.GetComponent<Image>();
+            if (img != null)
+            {
+                img.sprite = filledBean;
+            }
+            cupsNum++;
+        }
+    }
 }
