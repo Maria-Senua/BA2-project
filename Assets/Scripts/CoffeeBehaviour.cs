@@ -26,6 +26,13 @@ public class CoffeeBehaviour : MonoBehaviour
 
     public GameObject dialogWindow;
     public GameObject steam;
+    public GameObject cow;
+    public GameObject milk;
+    public Transform cowPos;
+    private bool isCowMoving = false;
+    private bool isCowReturning = false;
+    private Vector3 cowOriginalPosition;
+
 
     private void Awake()
     {
@@ -55,6 +62,7 @@ public class CoffeeBehaviour : MonoBehaviour
     void Start()
     {
         originalPosition = transform.position;
+        cowOriginalPosition = cow.transform.position;
     }
 
     private IEnumerator EndOfDrinking()
@@ -86,6 +94,27 @@ public class CoffeeBehaviour : MonoBehaviour
         {
             beansIndicator.SetActive(false);
         }
+
+        if (isCowMoving)
+        {
+            cow.transform.position = Vector3.MoveTowards(cow.transform.position, cowPos.position, moveSpeed * Time.deltaTime);
+
+            if (Vector3.Distance(cow.transform.position, cowPos.position) < 0.01f)
+            {
+                isCowMoving = false;
+                Invoke("PourMilk", 0.5f);
+            }
+        }
+        if (isCowReturning)
+        {
+            cow.transform.position = Vector3.MoveTowards(cow.transform.position, cowOriginalPosition, moveSpeed * Time.deltaTime);
+
+            if (Vector3.Distance(cow.transform.position, cowOriginalPosition) < 0.01f)
+            {
+                isCowReturning = false;
+                cow.SetActive(false);
+            }
+        }
     }
 
     public void FinishPuoringCoffee()
@@ -95,7 +124,13 @@ public class CoffeeBehaviour : MonoBehaviour
 
     private void StartPouringCoffee()
     {
-        dialogWindow.SetActive(false);
+        if (dialogWindow.activeInHierarchy) dialogWindow.SetActive(false);
+        if (cow.activeInHierarchy)
+        {
+            isCowReturning = true;
+            milk.SetActive(false);
+        }
+            
         steam.SetActive(true);
         Invoke("PourCoffee", 1.5f);
     }
@@ -107,6 +142,24 @@ public class CoffeeBehaviour : MonoBehaviour
         isEmpty = false;
         cupsNum--;
         UpdateBeansIndicator();
+    }
+
+    private void BringCow()
+    {
+        dialogWindow.SetActive(false);
+        cow.SetActive(true);
+        isCowMoving = true;
+    }
+
+    private void PourMilk()
+    {
+        milk.SetActive(true);
+    }
+
+    public void FinishCappuccino()
+    {
+        Invoke("BringCow", 2f);
+        Invoke("StartPouringCoffee", 8f);
     }
 
     private void UpdateBeansIndicator()
