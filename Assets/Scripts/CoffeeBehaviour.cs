@@ -32,6 +32,7 @@ public class CoffeeBehaviour : MonoBehaviour
     private bool isCowMoving = false;
     private bool isCowReturning = false;
     private Vector3 cowOriginalPosition;
+    private AudioSource audioSource;
 
 
     private void Awake()
@@ -45,6 +46,7 @@ public class CoffeeBehaviour : MonoBehaviour
         {
             
             isDrinking = true;
+            audioSource.Play();
         }
 
     }
@@ -54,6 +56,10 @@ public class CoffeeBehaviour : MonoBehaviour
         drinkMeLabel.SetActive(false);
         transform.position = Vector3.MoveTowards(transform.position, bocca.transform.position, moveSpeed * Time.deltaTime);
         transform.rotation = Quaternion.AngleAxis(-54f, Vector3.right);
+        if (Vector3.Distance(transform.position, bocca.transform.position) < 0.01f)
+        {
+            
+        }
         StartCoroutine(EndOfDrinking());
         StartCoroutine(PutCupBack());
     }
@@ -63,6 +69,7 @@ public class CoffeeBehaviour : MonoBehaviour
     {
         originalPosition = transform.position;
         cowOriginalPosition = cow.transform.position;
+        audioSource = GetComponent<AudioSource>();
     }
 
     private IEnumerator EndOfDrinking()

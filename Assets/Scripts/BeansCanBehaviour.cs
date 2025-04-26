@@ -8,10 +8,12 @@ public class BeansCanBehaviour : MonoBehaviour
 
     public float interactionDistance = 1.5f;
     private Animator animator;
+    private AudioSource audioSource;
 
     private void Awake()
     {
         animator = GetComponent<Animator>();
+        audioSource = GetComponent<AudioSource>();
     }
 
     public void OnMouseDown()
@@ -29,6 +31,7 @@ public class BeansCanBehaviour : MonoBehaviour
         if (collision.gameObject.CompareTag("Machine"))
         {
             Debug.Log("start refilleng");
+            audioSource.Play();
             StartCoroutine(RefillBeans());
         }
     }
