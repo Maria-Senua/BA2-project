@@ -41,7 +41,7 @@ public class BeansCanBehaviour : MonoBehaviour
         while (CoffeeBehaviour.instance.cupsNum < 5)
         {
             CoffeeBehaviour.instance.RefillBean();
-            yield return new WaitForSeconds(0.1f);  
+            yield return new WaitForSeconds(0.5f);  
         }
        
     }

@@ -56,10 +56,6 @@ public class CoffeeBehaviour : MonoBehaviour
         drinkMeLabel.SetActive(false);
         transform.position = Vector3.MoveTowards(transform.position, bocca.transform.position, moveSpeed * Time.deltaTime);
         transform.rotation = Quaternion.AngleAxis(-54f, Vector3.right);
-        if (Vector3.Distance(transform.position, bocca.transform.position) < 0.01f)
-        {
-            
-        }
         StartCoroutine(EndOfDrinking());
         StartCoroutine(PutCupBack());
     }
@@ -188,13 +184,18 @@ public class CoffeeBehaviour : MonoBehaviour
     {
         if (cupsNum < 5)
         {
-            Transform child = beansIndicator.transform.GetChild(cupsNum);
-            Image img = child.GetComponent<Image>();
-            if (img != null)
+            int index = 5 - cupsNum - 1; 
+            if (index >= 0 && index < beansIndicator.transform.childCount)
             {
-                img.sprite = filledBean;
+                Transform child = beansIndicator.transform.GetChild(index);
+                Image img = child.GetComponent<Image>();
+                if (img != null)
+                {
+                    img.sprite = filledBean;
+                }
             }
             cupsNum++;
         }
     }
+
 }

@@ -26,7 +26,7 @@ MonoBehaviour:
   m_MinSize: {x: 400, y: 100}
   m_MaxSize: {x: 32384, y: 16192}
   vertical: 0
-  controlID: 35170
+  controlID: 36760
   draggingID: 0
 --- !u!114 &2
 MonoBehaviour:
@@ -150,7 +150,7 @@ MonoBehaviour:
   m_MinSize: {x: 100, y: 100}
   m_MaxSize: {x: 8096, y: 16192}
   vertical: 1
-  controlID: 35171
+  controlID: 36761
   draggingID: 0
 --- !u!114 &4
 MonoBehaviour:
@@ -598,7 +598,7 @@ MonoBehaviour:
   m_Rotation:
     m_Target: {x: 0.16700886, y: 0.8308926, z: -0.34154248, w: 0.4062933}
     speed: 2
-    m_Value: {x: 0.16700888, y: 0.8308926, z: -0.3415425, w: 0.40629333}
+    m_Value: {x: 0.16700886, y: 0.8308926, z: -0.34154248, w: 0.4062933}
   m_Size:
     m_Target: 0.07970955
     speed: 2
@@ -767,8 +767,8 @@ MonoBehaviour:
     y: 388
     width: 609
     height: 353
-  m_MinSize: {x: 201, y: 221}
-  m_MaxSize: {x: 4001, y: 4021}
+  m_MinSize: {x: 200, y: 200}
+  m_MaxSize: {x: 4000, y: 4000}
   m_ActualView: {fileID: 2}
   m_Panes:
   - {fileID: 2}
@@ -866,8 +866,8 @@ MonoBehaviour:
     y: 0
     width: 273
     height: 741
-  m_MinSize: {x: 202, y: 221}
-  m_MaxSize: {x: 4002, y: 4021}
+  m_MinSize: {x: 200, y: 200}
+  m_MaxSize: {x: 4000, y: 4000}
   m_ActualView: {fileID: 11}
   m_Panes:
   - {fileID: 11}
@@ -1176,7 +1176,7 @@ MonoBehaviour:
     m_ControlHash: -371814159
     m_PrefName: Preview_InspectorPreview
   m_LastInspectedObjectInstanceID: -1
-  m_LastVerticalScrollValue: 895.5001
+  m_LastVerticalScrollValue: 0
   m_GlobalObjectId: 
   m_InspectorMode: 0
   m_LockTracker:
