@@ -75,7 +75,7 @@ public class ButtonBehaviour : MonoBehaviour
             if (button.groupID == 2)
             {
                 button.isPouring = groupStates[groupID];
-                Invoke("Return", 4f);
+                Invoke("Return", 8f);
             } 
         }
             
@@ -105,16 +105,16 @@ public class ButtonBehaviour : MonoBehaviour
         bool state = groupStates[groupID];
 
         meshRenderer.material = state ? mActive : mInactive;
-
-        if (groupID == 2)
-        {
-            bool showSplash = state && CoffeeBehaviour.instance.isEmpty && CoffeeBehaviour.instance.cupsNum > 0;
-            splash.SetActive(showSplash);
-        }
-        else
-        {
-            splash.SetActive(state);
-        }
+        if (groupID == 0) splash.SetActive(state);
+        //if (groupID == 2)
+        //{
+        //    bool showSplash = state && CoffeeBehaviour.instance.isEmpty && CoffeeBehaviour.instance.cupsNum > 0;
+        //    splash.SetActive(showSplash);
+        //}
+        //else
+        //{
+        //    splash.SetActive(state);
+        //}
     }
   
 }

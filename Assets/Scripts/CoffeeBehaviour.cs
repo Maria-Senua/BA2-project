@@ -24,6 +24,8 @@ public class CoffeeBehaviour : MonoBehaviour
     public Sprite usedBean;
     public Sprite filledBean;
 
+    public GameObject dialogWindow;
+    public GameObject steam;
 
     private void Awake()
     {
@@ -88,6 +90,13 @@ public class CoffeeBehaviour : MonoBehaviour
 
     public void FinishPuoringCoffee()
     {
+        Invoke("StartPouringCoffee", 2f);
+    }
+
+    private void StartPouringCoffee()
+    {
+        dialogWindow.SetActive(false);
+        steam.SetActive(true);
         Invoke("PourCoffee", 1.5f);
     }
 
