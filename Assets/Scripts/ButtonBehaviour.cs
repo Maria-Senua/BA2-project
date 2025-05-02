@@ -105,7 +105,7 @@ public class ButtonBehaviour : MonoBehaviour
         bool state = groupStates[groupID];
 
         meshRenderer.material = state ? mActive : mInactive;
-        if (groupID == 0) splash.SetActive(state);
+        if (groupID == 0 || groupID == 3) splash.SetActive(state);
         //if (groupID == 2)
         //{
         //    bool showSplash = state && CoffeeBehaviour.instance.isEmpty && CoffeeBehaviour.instance.cupsNum > 0;
