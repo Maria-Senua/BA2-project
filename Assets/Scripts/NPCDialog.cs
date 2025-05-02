@@ -57,7 +57,7 @@ public class NPCDialog : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.E) && IsInRange()) Engage();
+        if (Input.GetKeyDown(KeyCode.E) && IsInRange()) Interact();
 
         if (isEngaged)
         {
