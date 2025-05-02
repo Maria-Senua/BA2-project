@@ -15,6 +15,8 @@ public class NPCDialog : MonoBehaviour
     public float interactionDistance = 3.0f;
     private bool isEngaged;
 
+    public bool proximityEngage = false;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -63,7 +65,11 @@ public class NPCDialog : MonoBehaviour
         {
             if (!IsInRange()) Disengage();
         }
-        
+        else if (proximityEngage && IsInRange())
+        {
+            Interact(); 
+        }
+
     }
 
     bool IsInRange()
