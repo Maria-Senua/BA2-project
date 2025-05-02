@@ -996,3 +996,32 @@ AssetImportParameters requested are different than current active one (requested
   custom:video-encoder-webm-vp8: eb34c28f22e8b96e1ab97ce403110664 -> 
   custom:audio-decoder-ogg-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
   custom:audio-encoder-webm-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
+========================================================================
+Received Import Request.
+  Time since last request: 8231.168500 seconds.
+  path: Assets/Prefabs
+  artifactKey: Guid(84799d88e12c84a56a48e6397676610a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Prefabs using Guid(84799d88e12c84a56a48e6397676610a) Importer(815301076,1909f56bfc062723c751e8b465ee728b) [PhysX] Initialized MultithreadedTaskDispatcher with 8 workers.
+ -> (artifact id: '843f7d21344bff200c2577fc2f7247b1') in 0.188232 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 0
+========================================================================
+Received Import Request.
+  Time since last request: 4.326651 seconds.
+  path: Assets/Prefabs/Boom.prefab
+  artifactKey: Guid(e60127de07b0547508393c81b98ed1fb) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Prefabs/Boom.prefab using Guid(e60127de07b0547508393c81b98ed1fb) Importer(815301076,1909f56bfc062723c751e8b465ee728b) [PhysX] Initialized MultithreadedTaskDispatcher with 8 workers.
+[PhysX] Initialized MultithreadedTaskDispatcher with 8 workers.
+ -> (artifact id: '7dcbadd113b0da660c6c493469ad854a') in 0.486720 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 6
+========================================================================
+Received Import Request.
+  Time since last request: 45.483953 seconds.
+  path: Assets/Materials/mExplosion.mat
+  artifactKey: Guid(5ff540246af2f45f393d86b264d3b213) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Materials/mExplosion.mat using Guid(5ff540246af2f45f393d86b264d3b213) Importer(815301076,1909f56bfc062723c751e8b465ee728b) [PhysX] Initialized MultithreadedTaskDispatcher with 8 workers.
+[PhysX] Initialized MultithreadedTaskDispatcher with 8 workers.
+ -> (artifact id: 'e3c11d985b5abbde897bae84ad72a0d5') in 0.673025 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 2
