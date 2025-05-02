@@ -3556,7 +3556,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   dialogRunner: {fileID: 1351091068}
   portrait: {fileID: 21300000, guid: 4fa08fe58e950422e90d1f436912a7f0, type: 3}
-  dialogSequence: {fileID: 11400000, guid: a701e09cc484d4458bd76e6b50a9b2f5, type: 2}
+  dialogSequence: {fileID: 11400000, guid: 7785a1cc5c15342b9b38fb0a4a82615b, type: 2}
   interactionDistance: 3
 --- !u!114 &1047139677
 MonoBehaviour:
@@ -12050,7 +12050,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   dialogRunner: {fileID: 1351091068}
   portrait: {fileID: 21300000, guid: 4fa08fe58e950422e90d1f436912a7f0, type: 3}
-  dialogSequence: {fileID: 11400000, guid: a701e09cc484d4458bd76e6b50a9b2f5, type: 2}
+  dialogSequence: {fileID: 11400000, guid: 56611415acbec47dabd5e75f424c88bf, type: 2}
   interactionDistance: 3
 --- !u!114 &1786256708
 MonoBehaviour:
