@@ -1004,7 +1004,7 @@ Transform:
   m_GameObject: {fileID: 465997063}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: 0.9997322, z: -0, w: 0.023142515}
-  m_LocalPosition: {x: -0.17, y: 0.75, z: 1.38}
+  m_LocalPosition: {x: -3.45, y: 0.75, z: -2.65}
   m_LocalScale: {x: 0.69064, y: 0.69064, z: 0.69064}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -4032,7 +4032,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 29034d93383924a34b708bf353fc2df5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  dialogWindow: {fileID: 0}
 --- !u!1 &1196478075
 GameObject:
   m_ObjectHideFlags: 0
@@ -4878,6 +4877,7 @@ GameObject:
   - component: {fileID: 1351091066}
   - component: {fileID: 1351091065}
   - component: {fileID: 1351091064}
+  - component: {fileID: 1351091068}
   m_Layer: 5
   m_Name: Canvas
   m_TagString: Untagged
@@ -4971,6 +4971,21 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0, y: 0}
+--- !u!114 &1351091068
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1351091063}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c6114e45f76d34f7793c477469c15c88, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  dialogWindow: {fileID: 786937005}
+  dialogText: {fileID: 560348079}
+  imageContainer: {fileID: 655939950}
 --- !u!1 &1397881777
 GameObject:
   m_ObjectHideFlags: 0
@@ -11951,6 +11966,7 @@ GameObject:
   - component: {fileID: 1835029221}
   - component: {fileID: 1835029220}
   - component: {fileID: 1835029224}
+  - component: {fileID: 1835029225}
   m_Layer: 0
   m_Name: NPC
   m_TagString: Untagged
@@ -12060,10 +12076,10 @@ MonoBehaviour:
   onInteraction:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 786937005}
-        m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
-        m_MethodName: SetActive
-        m_Mode: 6
+      - m_Target: {fileID: 1835029225}
+        m_TargetAssemblyTypeName: NPCDialog, Assembly-CSharp
+        m_MethodName: Interact
+        m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
@@ -12072,6 +12088,25 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 1
         m_CallState: 2
+  interactionDistance: 3
+--- !u!114 &1835029225
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1835029219}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3ce019f1c3a0f4503aa0ef9762f71ab6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  dialogRunner: {fileID: 1351091068}
+  portrait: {fileID: 21300000, guid: 4fa08fe58e950422e90d1f436912a7f0, type: 3}
+  npcDialog:
+  - Hello!
+  - I'm Bob.
+  - How are you?
   interactionDistance: 3
 --- !u!1 &1881480199
 GameObject:

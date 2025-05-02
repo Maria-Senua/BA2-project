@@ -1,14 +1,20 @@
 ﻿<Properties StartupConfiguration="{752E0DE0-251B-4257-504B-EB41A7F4398E}|">
+  <MonoDevelop.Ide.DebuggingService.PinnedWatches />
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/Scripts/ButtonBehaviour.cs">
+  <MonoDevelop.Ide.DebuggingService.Breakpoints>
+    <BreakpointStore />
+  </MonoDevelop.Ide.DebuggingService.Breakpoints>
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/Scripts/CoffeeBehaviour.cs">
     <Files>
       <File FileName="Assets/Scripts/PlayerController.cs" />
-      <File FileName="Assets/Scripts/ButtonBehaviour.cs" Line="39" Column="6" />
-      <File FileName="Assets/Scripts/DoorBehaviour.cs" />
+      <File FileName="Assets/Scripts/ButtonBehaviour.cs" />
       <File FileName="Assets/Scripts/PlatformBehaviour.cs" />
       <File FileName="Assets/Scripts/Interactable.cs" />
-      <File FileName="Assets/Scripts/CoffeeBehaviour.cs" Line="18" Column="29" />
-      <File FileName="Assets/Scripts/Billboard.cs" />
+      <File FileName="Assets/Scripts/NPCDialog.cs" Line="26" Column="33" />
+      <File FileName="Assets/Scripts/DialogRunner.cs" />
+      <File FileName="Assets/Scripts/DialogSequence.cs" />
+      <File FileName="Assets/Scripts/BeansCanBehaviour.cs" Line="1" Column="1" />
+      <File FileName="Assets/Scripts/CoffeeBehaviour.cs" Line="233" Column="1" />
     </Files>
     <Pads>
       <Pad Id="ProjectPad">
@@ -23,9 +29,5 @@
     </Pads>
   </MonoDevelop.Ide.Workbench>
   <MultiItemStartupConfigurations />
-  <MonoDevelop.Ide.DebuggingService.PinnedWatches />
-  <MonoDevelop.Ide.DebuggingService.Breakpoints>
-    <BreakpointStore />
-  </MonoDevelop.Ide.DebuggingService.Breakpoints>
-  <MonoDevelop.Ide.ItemProperties.Assembly-CSharp PreferredExecutionTarget="1c195fd5-9a0a-4ea1-901a-1e52b2c40dec" />
+  <MonoDevelop.Ide.ItemProperties.Assembly-CSharp PreferredExecutionTarget="68c14ee4-3d30-4059-b093-1637b69456cc" />
 </Properties>
