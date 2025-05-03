@@ -10,12 +10,14 @@ public class NPCDialog : MonoBehaviour
     public DialogRunner dialogRunner;
     public Sprite portrait;
     public DialogSequence dialogSequence;
+    public DialogSequence newDialogSequence;
     int currentDialogID;
 
     public float interactionDistance = 3.0f;
     private bool isEngaged;
 
     public bool proximityEngage = false;
+    private bool hasTalked = false;
 
     // Start is called before the first frame update
     void Start()
@@ -35,6 +37,7 @@ public class NPCDialog : MonoBehaviour
     {
         dialogRunner.Hide();
         isEngaged = false;
+        hasTalked = true;
     }
 
     public void Interact()
@@ -65,9 +68,13 @@ public class NPCDialog : MonoBehaviour
         {
             if (!IsInRange()) Disengage();
         }
-        else if (proximityEngage && IsInRange())
+        else if (proximityEngage && IsInRange() && !hasTalked)
         {
             Interact(); 
+        }
+        else if (!IsInRange())
+        {
+            hasTalked = false; 
         }
 
     }
@@ -76,5 +83,10 @@ public class NPCDialog : MonoBehaviour
     {
         return Vector3.Distance(transform.position, Camera.main.transform.position) < interactionDistance;
         
+    }
+
+    public void SwapDialog()
+    {
+        dialogSequence = newDialogSequence;
     }
 }

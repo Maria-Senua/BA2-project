@@ -334,7 +334,19 @@ MonoBehaviour:
   groupID: 3
   onButtonPress:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1786256707}
+        m_TargetAssemblyTypeName: NPCDialog, Assembly-CSharp
+        m_MethodName: SwapDialog
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1 &69676671
 GameObject:
   m_ObjectHideFlags: 0
@@ -3854,7 +3866,7 @@ GameObject:
   - component: {fileID: 1047139677}
   - component: {fileID: 1047139676}
   m_Layer: 0
-  m_Name: NPC (2)
+  m_Name: NPCRosso
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -3875,6 +3887,7 @@ MonoBehaviour:
   dialogRunner: {fileID: 1351091068}
   portrait: {fileID: 21300000, guid: 4fa08fe58e950422e90d1f436912a7f0, type: 3}
   dialogSequence: {fileID: 11400000, guid: 7785a1cc5c15342b9b38fb0a4a82615b, type: 2}
+  newDialogSequence: {fileID: 0}
   interactionDistance: 3
   proximityEngage: 1
 --- !u!114 &1047139677
@@ -12349,7 +12362,7 @@ GameObject:
   - component: {fileID: 1786256708}
   - component: {fileID: 1786256707}
   m_Layer: 0
-  m_Name: NPC (1)
+  m_Name: NPCKoro
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -12370,6 +12383,7 @@ MonoBehaviour:
   dialogRunner: {fileID: 1351091068}
   portrait: {fileID: 21300000, guid: 4fa08fe58e950422e90d1f436912a7f0, type: 3}
   dialogSequence: {fileID: 11400000, guid: 56611415acbec47dabd5e75f424c88bf, type: 2}
+  newDialogSequence: {fileID: 11400000, guid: 9a7e7d066cd014f158f0f26e14d9b32a, type: 2}
   interactionDistance: 3
   proximityEngage: 0
 --- !u!114 &1786256708
@@ -12896,6 +12910,7 @@ MonoBehaviour:
   dialogRunner: {fileID: 1351091068}
   portrait: {fileID: 21300000, guid: 4fa08fe58e950422e90d1f436912a7f0, type: 3}
   dialogSequence: {fileID: 11400000, guid: a701e09cc484d4458bd76e6b50a9b2f5, type: 2}
+  newDialogSequence: {fileID: 0}
   interactionDistance: 3
   proximityEngage: 0
 --- !u!1 &1881480199
