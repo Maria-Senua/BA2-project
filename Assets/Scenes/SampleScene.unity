@@ -8822,7 +8822,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   dialogRunner: {fileID: 1351091068}
-  portrait: {fileID: 21300000, guid: 4fa08fe58e950422e90d1f436912a7f0, type: 3}
+  portrait: {fileID: 21300000, guid: 953048d930e084483b808b6447c48074, type: 3}
+  newPortrait: {fileID: 0}
   dialogSequence: {fileID: 11400000, guid: 7785a1cc5c15342b9b38fb0a4a82615b, type: 2}
   newDialogSequence: {fileID: 0}
   interactionDistance: 3
@@ -17319,7 +17320,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   dialogRunner: {fileID: 1351091068}
-  portrait: {fileID: 21300000, guid: 4fa08fe58e950422e90d1f436912a7f0, type: 3}
+  portrait: {fileID: 21300000, guid: 066d7cd16fc3e45e1ac488062e278cae, type: 3}
+  newPortrait: {fileID: 21300000, guid: 9217acc763e8e4953ae6844012297bc1, type: 3}
   dialogSequence: {fileID: 11400000, guid: 56611415acbec47dabd5e75f424c88bf, type: 2}
   newDialogSequence: {fileID: 11400000, guid: 9a7e7d066cd014f158f0f26e14d9b32a, type: 2}
   interactionDistance: 3
@@ -17846,7 +17848,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   dialogRunner: {fileID: 1351091068}
-  portrait: {fileID: 21300000, guid: 4fa08fe58e950422e90d1f436912a7f0, type: 3}
+  portrait: {fileID: 21300000, guid: 31cd2fd420e84435b984707b33825a01, type: 3}
+  newPortrait: {fileID: 0}
   dialogSequence: {fileID: 11400000, guid: a701e09cc484d4458bd76e6b50a9b2f5, type: 2}
   newDialogSequence: {fileID: 0}
   interactionDistance: 3

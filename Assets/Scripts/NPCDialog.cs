@@ -9,6 +9,7 @@ public class NPCDialog : MonoBehaviour
 
     public DialogRunner dialogRunner;
     public Sprite portrait;
+    public Sprite newPortrait;
     public DialogSequence dialogSequence;
     public DialogSequence newDialogSequence;
     int currentDialogID;
@@ -88,5 +89,6 @@ public class NPCDialog : MonoBehaviour
     public void SwapDialog()
     {
         dialogSequence = newDialogSequence;
+        portrait = newPortrait;
     }
 }
