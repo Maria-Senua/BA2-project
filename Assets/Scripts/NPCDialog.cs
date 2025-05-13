@@ -10,7 +10,8 @@ public class NPCDialog : MonoBehaviour
     public DialogRunner dialogRunner;
     public Sprite portrait;
     public Sprite newPortrait;
-    public DialogSequence dialogSequence;
+    public Sprite portraitCalm, portraitSad, portraitAngry;
+    public DialogSequence npcDialog;
     public DialogSequence newDialogSequence;
     int currentDialogID;
 
@@ -28,7 +29,7 @@ public class NPCDialog : MonoBehaviour
 
     void Engage()
     {
-        if (dialogSequence.lines.Length == 0) return;
+        if (npcDialog.lines.Length == 0) return;
         currentDialogID = 0;
         dialogRunner.Show();
         isEngaged = true;
@@ -50,14 +51,37 @@ public class NPCDialog : MonoBehaviour
         {
             currentDialogID++;
 
-            if (currentDialogID >= dialogSequence.lines.Length)
+            if (currentDialogID >= npcDialog.lines.Length)
             {
                 Disengage();
+                if (npcDialog.next != null) npcDialog = npcDialog.next;
+
                 return;
             }
         }
 
-        dialogRunner.SetDialog(dialogSequence.lines[currentDialogID], portrait);
+        DialogLine currentLine = npcDialog.lines[currentDialogID];
+        dialogRunner.SetDialog(currentLine.text, GetPortraitByEmotion(currentLine.emotion));
+        if (currentLine.choices != null)
+        {
+            dialogRunner.ShowChoices(currentLine.choices);
+        } else
+        {
+            dialogRunner.HideChoices();
+        }
+    }
+
+    Sprite GetPortraitByEmotion(DialogEmotionalState emotionalState)
+    {
+        switch (emotionalState)
+        {
+            case DialogEmotionalState.SAD:
+                return portraitSad;
+            case DialogEmotionalState.ANGRY:
+                return portraitAngry;
+            default:
+                return portraitCalm;
+        }
     }
 
     // Update is called once per frame
@@ -88,7 +112,7 @@ public class NPCDialog : MonoBehaviour
 
     public void SwapDialog()
     {
-        dialogSequence = newDialogSequence;
+        npcDialog = newDialogSequence;
         portrait = newPortrait;
     }
 }

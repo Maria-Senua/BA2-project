@@ -9,5 +9,7 @@ using UnityEngine;
 
 public class DialogSequence : ScriptableObject
 {
-    public string[] lines;
+    public DialogLine[] lines;
+
+    public DialogSequence next = null;
 }

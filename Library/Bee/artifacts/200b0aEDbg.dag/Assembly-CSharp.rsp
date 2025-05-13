@@ -355,6 +355,7 @@
 "Assets/Scripts/Billboard.cs"
 "Assets/Scripts/ButtonBehaviour.cs"
 "Assets/Scripts/CoffeeBehaviour.cs"
+"Assets/Scripts/DialogLine.cs"
 "Assets/Scripts/DialogRunner.cs"
 "Assets/Scripts/DialogSequence.cs"
 "Assets/Scripts/DoorBehaviour.cs"

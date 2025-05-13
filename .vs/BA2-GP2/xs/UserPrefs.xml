@@ -1,25 +1,25 @@
 ﻿<Properties StartupConfiguration="{752E0DE0-251B-4257-504B-EB41A7F4398E}|">
-  <MonoDevelop.Ide.DebuggingService.PinnedWatches />
-  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
+  <MonoDevelop.Ide.ItemProperties.Assembly-CSharp PreferredExecutionTarget="81d13074-b179-4606-9d53-6d00938f3c1f" />
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
     <BreakpointStore />
   </MonoDevelop.Ide.DebuggingService.Breakpoints>
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/Scripts/CoffeeBehaviour.cs">
+  <MonoDevelop.Ide.DebuggingService.PinnedWatches />
+  <MultiItemStartupConfigurations />
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/Scripts/NPCDialog.cs">
     <Files>
-      <File FileName="Assets/Scripts/PlayerController.cs" />
-      <File FileName="Assets/Scripts/ButtonBehaviour.cs" />
-      <File FileName="Assets/Scripts/PlatformBehaviour.cs" />
+      <File FileName="Assets/Scripts/PlayerController.cs" Line="130" Column="39" />
       <File FileName="Assets/Scripts/Interactable.cs" />
-      <File FileName="Assets/Scripts/NPCDialog.cs" Line="26" Column="33" />
-      <File FileName="Assets/Scripts/DialogRunner.cs" />
-      <File FileName="Assets/Scripts/DialogSequence.cs" />
-      <File FileName="Assets/Scripts/BeansCanBehaviour.cs" Line="1" Column="1" />
-      <File FileName="Assets/Scripts/CoffeeBehaviour.cs" Line="233" Column="1" />
+      <File FileName="Assets/Scripts/NPCDialog.cs" Line="46" Column="6" />
+      <File FileName="Assets/Scripts/DialogRunner.cs" Line="37" Column="37" />
+      <File FileName="Assets/Scripts/DialogSequence.cs" Line="13" Column="1" />
+      <File FileName="Assets/Scripts/ButtonBehaviour.cs" Line="1" Column="1" />
+      <File FileName="Assets/Scripts/DialogLine.cs" Line="15" Column="14" />
     </Files>
     <Pads>
       <Pad Id="ProjectPad">
         <State name="__root__">
-          <Node name="BA2-GP2">
+          <Node name="BA2-GP2" expanded="True">
             <Node name="Assets" expanded="True">
               <Node name="Scripts" expanded="True" />
             </Node>
@@ -28,6 +28,4 @@
       </Pad>
     </Pads>
   </MonoDevelop.Ide.Workbench>
-  <MultiItemStartupConfigurations />
-  <MonoDevelop.Ide.ItemProperties.Assembly-CSharp PreferredExecutionTarget="68c14ee4-3d30-4059-b093-1637b69456cc" />
 </Properties>

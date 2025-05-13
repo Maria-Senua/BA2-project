@@ -67,6 +67,7 @@
     <Compile Include="Assets/Scripts/DialogRunner.cs" />
     <Compile Include="Assets/Scripts/ButtonBehaviour.cs" />
     <Compile Include="Assets/Scripts/NPCDialog.cs" />
+    <Compile Include="Assets/Scripts/DialogLine.cs" />
     <Compile Include="Assets/Scripts/BeansCanBehaviour.cs" />
     <Compile Include="Assets/Scripts/Interactable.cs" />
     <Compile Include="Assets/Scripts/Billboard.cs" />
