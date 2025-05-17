@@ -62,12 +62,16 @@ public class NPCDialog : MonoBehaviour
 
         DialogLine currentLine = npcDialog.lines[currentDialogID];
         dialogRunner.SetDialog(currentLine.text, GetPortraitByEmotion(currentLine.emotion));
-        if (currentLine.choices != null)
+        if (currentLine.choices.Length != 0)
         {
-            dialogRunner.ShowChoices(currentLine.choices);
+            Debug.Log("buttons array choices " + currentLine.choices.Length);
+            dialogRunner.ShowChoices(currentLine.choices, this); //this = gameObject.GetComponent<NPCDialog>()
+            
         } else
         {
+            Debug.Log("buttons array choices hiding" + currentLine.choices.Length);
             dialogRunner.HideChoices();
+            
         }
     }
 
@@ -114,5 +118,12 @@ public class NPCDialog : MonoBehaviour
     {
         npcDialog = newDialogSequence;
         portrait = newPortrait;
+    }
+
+    public void OnChoiceButton(int btnID)
+    {
+        npcDialog = npcDialog.lines[currentDialogID].choices[btnID].next;
+        isEngaged = false;
+        Interact();
     }
 }

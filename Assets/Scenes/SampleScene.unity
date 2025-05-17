@@ -360,12 +360,12 @@ GameObject:
   - component: {fileID: 48091447}
   - component: {fileID: 48091446}
   m_Layer: 5
-  m_Name: Button (1)
+  m_Name: RightChoice
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &48091445
 RectTransform:
   m_ObjectHideFlags: 0
@@ -8158,7 +8158,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &786937006
 RectTransform:
   m_ObjectHideFlags: 0
@@ -8620,10 +8620,10 @@ MonoBehaviour:
   dialogRunner: {fileID: 1351091068}
   portrait: {fileID: 21300000, guid: 066d7cd16fc3e45e1ac488062e278cae, type: 3}
   newPortrait: {fileID: 0}
-  portraitCalm: {fileID: 0}
-  portraitSad: {fileID: 0}
-  portraitAngry: {fileID: 0}
-  npcDialog: {fileID: 0}
+  portraitCalm: {fileID: 21300000, guid: 066d7cd16fc3e45e1ac488062e278cae, type: 3}
+  portraitSad: {fileID: 21300000, guid: ea4d52328fa4e409cba49db6adea9432, type: 3}
+  portraitAngry: {fileID: 21300000, guid: c0a5ce631326a45a385a1c88552c3687, type: 3}
+  npcDialog: {fileID: 11400000, guid: 9e07007529d1d4ea89bb8ade698bd688, type: 2}
   newDialogSequence: {fileID: 0}
   interactionDistance: 3
   proximityEngage: 0
@@ -10957,6 +10957,8 @@ MonoBehaviour:
   dialogWindow: {fileID: 786937005}
   dialogText: {fileID: 560348079}
   imageContainer: {fileID: 655939950}
+  btnChoice0: {fileID: 1457231802}
+  btnChoice1: {fileID: 48091446}
 --- !u!1 &1397881777
 GameObject:
   m_ObjectHideFlags: 0
@@ -11310,12 +11312,12 @@ GameObject:
   - component: {fileID: 1457231803}
   - component: {fileID: 1457231802}
   m_Layer: 5
-  m_Name: Button
+  m_Name: LeftChoice
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1457231801
 RectTransform:
   m_ObjectHideFlags: 0

@@ -12,6 +12,7 @@ public class DialogRunner : MonoBehaviour
     public Image imageContainer;
     public Button btnChoice0;
     public Button btnChoice1;
+    private NPCDialog choiceListener;
 
     public void Show()
     {
@@ -31,21 +32,30 @@ public class DialogRunner : MonoBehaviour
 
     public void OnChoiceButton(int btnID)
     {
-
+        if (choiceListener != null)
+        {
+            choiceListener.OnChoiceButton(btnID);
+        }
     }
 
-    public void ShowChoices(DialogChoice[] choices)
+    public void ShowChoices(DialogChoice[] choices, NPCDialog listener)
     {
+        Debug.Log("choices " + choices.Length);
         btnChoice0.gameObject.SetActive(true);
         btnChoice0.GetComponentInChildren<TMP_Text>().text = choices[0].buttonText;
 
         btnChoice1.gameObject.SetActive(true);
         btnChoice1.GetComponentInChildren<TMP_Text>().text = choices[1].buttonText;
+
+        choiceListener = listener;
     }
 
     public void HideChoices()
     {
+        Debug.Log("hiding choices");
         btnChoice0.gameObject.SetActive(false);
         btnChoice1.gameObject.SetActive(false);
+
+        choiceListener = null;
     }
 }

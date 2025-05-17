@@ -13,17 +13,14 @@ MonoBehaviour:
   m_Name: EmoDialog
   m_EditorClassIdentifier: 
   lines:
+  - text: Good to see ya again.
+    emotion: 2
+    choices: []
   - text: How are you?
     emotion: 0
     choices:
     - buttonText: Good
-      next: {fileID: 0}
+      next: {fileID: 11400000, guid: d774aefbb3b22456489df055c14ecdf5, type: 2}
     - buttonText: Muss, ne?
-      next: {fileID: 0}
-  - text: 
-    emotion: 0
-    choices: []
-  - text: 
-    emotion: 0
-    choices: []
+      next: {fileID: 11400000, guid: 0c2e02506a4494b1ea6226dd8d75d02d, type: 2}
   next: {fileID: 0}
