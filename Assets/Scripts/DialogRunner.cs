@@ -13,6 +13,7 @@ public class DialogRunner : MonoBehaviour
     public Button btnChoice0;
     public Button btnChoice1;
     private NPCDialog choiceListener;
+    [HideInInspector] public bool withChoices;
 
     public void Show()
     {
@@ -48,6 +49,7 @@ public class DialogRunner : MonoBehaviour
         btnChoice1.GetComponentInChildren<TMP_Text>().text = choices[1].buttonText;
 
         choiceListener = listener;
+        withChoices = true;
     }
 
     public void HideChoices()
@@ -57,5 +59,6 @@ public class DialogRunner : MonoBehaviour
         btnChoice1.gameObject.SetActive(false);
 
         choiceListener = null;
+        withChoices = false;
     }
 }

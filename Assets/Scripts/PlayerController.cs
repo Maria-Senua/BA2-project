@@ -9,7 +9,8 @@ public class PlayerController : MonoBehaviour
     {
         IDLE,
         WALK,
-        JUMP
+        JUMP,
+        DIALOG
     }
 
     private PlayerState currentState = PlayerState.IDLE;
@@ -27,6 +28,8 @@ public class PlayerController : MonoBehaviour
 
     private Transform currentPlatform = null;
     private Transform previousPlatform = null;
+
+    public DialogRunner dialogRunner;
 
 
     private void Awake()
@@ -71,6 +74,10 @@ public class PlayerController : MonoBehaviour
                 } else if (Input.GetKey(KeyCode.W) || Input.GetKey(KeyCode.S))
                 {
                     currentState = PlayerState.WALK;
+                } else if (dialogRunner.withChoices)
+                {
+                    Debug.Log("currentState is dialog");
+                    currentState = PlayerState.DIALOG;
                 }
                 break;
 
@@ -94,13 +101,21 @@ public class PlayerController : MonoBehaviour
                 }
                 SetMovementDirection(0.25f);
                 break;
+
+            case PlayerState.DIALOG:
+                if (!dialogRunner.withChoices)
+                {
+                    Debug.Log("currentState is idle again");
+                    currentState = PlayerState.IDLE;
+                }
+                break;
         }
     }
 
     // Update is called once per frame
     void Update()
     {
-        
+        Debug.Log("currentState in UPD is " + currentState);
 
         if (characterController.isGrounded)
         {

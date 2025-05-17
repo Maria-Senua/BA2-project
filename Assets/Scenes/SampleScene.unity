@@ -6232,6 +6232,7 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+  dialogRunner: {fileID: 1351091068}
 --- !u!143 &465997069
 CharacterController:
   m_ObjectHideFlags: 0
@@ -8630,8 +8631,10 @@ MonoBehaviour:
   portraitSad: {fileID: 21300000, guid: ea4d52328fa4e409cba49db6adea9432, type: 3}
   portraitShock: {fileID: 21300000, guid: 3ab1da1457f4f4e3f84120df7228e458, type: 3}
   npcDialog: {fileID: 11400000, guid: 9e07007529d1d4ea89bb8ade698bd688, type: 2}
+  interruptDialog: {fileID: 11400000, guid: 20aeb63f623f444b89d1552f5b6cd039, type: 2}
   newDialogSequence: {fileID: 0}
   interactionDistance: 3
+  interruptednDistance: 10
   proximityEngage: 0
 --- !u!114 &954819961
 MonoBehaviour:
@@ -9217,8 +9220,10 @@ MonoBehaviour:
   portraitSad: {fileID: 0}
   portraitShock: {fileID: 0}
   npcDialog: {fileID: 0}
+  interruptDialog: {fileID: 0}
   newDialogSequence: {fileID: 0}
   interactionDistance: 3
+  interruptednDistance: 7
   proximityEngage: 1
 --- !u!114 &1047139677
 MonoBehaviour:
@@ -10971,6 +10976,7 @@ MonoBehaviour:
   imageContainer: {fileID: 655939950}
   btnChoice0: {fileID: 1457231802}
   btnChoice1: {fileID: 48091446}
+  withChoices: 0
 --- !u!1 &1397881777
 GameObject:
   m_ObjectHideFlags: 0
@@ -17993,8 +17999,10 @@ MonoBehaviour:
   portraitSad: {fileID: 0}
   portraitShock: {fileID: 0}
   npcDialog: {fileID: 0}
+  interruptDialog: {fileID: 0}
   newDialogSequence: {fileID: 11400000, guid: 9a7e7d066cd014f158f0f26e14d9b32a, type: 2}
   interactionDistance: 3
+  interruptednDistance: 7
   proximityEngage: 0
 --- !u!114 &1786256708
 MonoBehaviour:
@@ -18530,8 +18538,10 @@ MonoBehaviour:
   portraitSad: {fileID: 0}
   portraitShock: {fileID: 0}
   npcDialog: {fileID: 0}
+  interruptDialog: {fileID: 0}
   newDialogSequence: {fileID: 0}
   interactionDistance: 3
+  interruptednDistance: 7
   proximityEngage: 0
 --- !u!1 &1881480199
 GameObject:

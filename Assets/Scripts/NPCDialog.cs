@@ -12,14 +12,18 @@ public class NPCDialog : MonoBehaviour
     public Sprite newPortrait;
     public Sprite portraitAngry, portraitFury, portraitMistake, portraitMock, portraitNormal, portraitPink, portraitRight, portraitSad, portraitShock;
     public DialogSequence npcDialog;
+    public DialogSequence interruptDialog;
+    private DialogSequence previousDialog;
     public DialogSequence newDialogSequence;
     int currentDialogID;
 
     public float interactionDistance = 3.0f;
+    public float interruptednDistance = 7.0f;
     private bool isEngaged;
 
     public bool proximityEngage = false;
     private bool hasTalked = false;
+    private bool wasInterrupted = false;
 
     // Start is called before the first frame update
     void Start()
@@ -60,20 +64,33 @@ public class NPCDialog : MonoBehaviour
             }
         }
 
+        ShowCurrentDialogLine();
+    }
+
+    void ShowCurrentDialogLine()
+    {
+        if (wasInterrupted)
+        {
+            npcDialog = previousDialog;
+            wasInterrupted = false;
+        }
+       
+
+        if (npcDialog.lines.Length == 0 || currentDialogID >= npcDialog.lines.Length) return;
+
         DialogLine currentLine = npcDialog.lines[currentDialogID];
         dialogRunner.SetDialog(currentLine.text, GetPortraitByEmotion(currentLine.emotion));
+
         if (currentLine.choices.Length != 0)
         {
-            Debug.Log("buttons array choices " + currentLine.choices.Length);
-            dialogRunner.ShowChoices(currentLine.choices, this); //this = gameObject.GetComponent<NPCDialog>()
-            
-        } else
+            dialogRunner.ShowChoices(currentLine.choices, this);
+        }
+        else
         {
-            Debug.Log("buttons array choices hiding" + currentLine.choices.Length);
             dialogRunner.HideChoices();
-            
         }
     }
+
 
     Sprite GetPortraitByEmotion(DialogEmotionalState emotionalState)
     {
@@ -107,7 +124,23 @@ public class NPCDialog : MonoBehaviour
 
         if (isEngaged)
         {
-            if (!IsInRange()) Disengage();
+            if (!IsInRange())
+            {
+                if (npcDialog.next == null && !IsInterrupted())
+                {
+                    Disengage();
+                }
+                else if (npcDialog.next != null && IsInterrupted())
+                {
+                    
+                    previousDialog = npcDialog;
+                    npcDialog = interruptDialog;
+                    currentDialogID = 0;
+                    dialogRunner.Show(); 
+                    ShowCurrentDialogLine();
+                    wasInterrupted = true;
+                }
+            }
         }
         else if (proximityEngage && IsInRange() && !hasTalked)
         {
@@ -124,6 +157,12 @@ public class NPCDialog : MonoBehaviour
     {
         return Vector3.Distance(transform.position, Camera.main.transform.position) < interactionDistance;
         
+    }
+
+    bool IsInterrupted()
+    {
+        return !IsInRange() && Vector3.Distance(transform.position, Camera.main.transform.position) < interruptednDistance;
+
     }
 
     public void SwapDialog()
