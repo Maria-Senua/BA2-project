@@ -79,10 +79,22 @@ public class NPCDialog : MonoBehaviour
     {
         switch (emotionalState)
         {
-            case DialogEmotionalState.SAD:
-                return portraitSad;
             case DialogEmotionalState.ANGRY:
                 return portraitAngry;
+            case DialogEmotionalState.FURY:
+                return portraitFury;
+            case DialogEmotionalState.MISTAKE:
+                return portraitMistake;
+            case DialogEmotionalState.MOCK:
+                return portraitMock;
+            case DialogEmotionalState.PINK:
+                return portraitPink;
+            case DialogEmotionalState.RIGHT:
+                return portraitRight;
+            case DialogEmotionalState.SAD:
+                return portraitSad;
+            case DialogEmotionalState.SHOCK:
+                return portraitShock;
             default:
                 return portraitNormal;
         }

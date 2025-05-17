@@ -1,0 +1,23 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 50a4806a7f39f49d3b208566bd2b4186, type: 3}
+  m_Name: HistoryDialog
+  m_EditorClassIdentifier: 
+  lines:
+  - text: The year of Risorgimento?
+    emotion: 4
+    choices:
+    - buttonText: 1854
+      next: {fileID: 11400000, guid: 4a5f81ef140ae40caa50f0fa1d4b0942, type: 2}
+    - buttonText: 1861
+      next: {fileID: 11400000, guid: 6fa45f156ed4047aa86a1dd50282ef52, type: 2}
+  next: {fileID: 0}

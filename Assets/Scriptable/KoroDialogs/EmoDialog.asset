@@ -14,16 +14,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   lines:
   - text: Hello again, student!
-    emotion: 2
+    emotion: 4
     choices: []
   - text: Time to study and kill!
-    emotion: 0
+    emotion: 4
     choices: []
-  - text: How are you?
-    emotion: 0
-    choices:
-    - buttonText: Good
-      next: {fileID: 11400000, guid: d774aefbb3b22456489df055c14ecdf5, type: 2}
-    - buttonText: Muss, ne?
-      next: {fileID: 11400000, guid: 0c2e02506a4494b1ea6226dd8d75d02d, type: 2}
-  next: {fileID: 0}
+  next: {fileID: 11400000, guid: 4a832c292c94741f88d49e98c9a4a960, type: 2}
