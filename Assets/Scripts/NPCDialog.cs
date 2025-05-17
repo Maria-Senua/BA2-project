@@ -10,7 +10,7 @@ public class NPCDialog : MonoBehaviour
     public DialogRunner dialogRunner;
     public Sprite portrait;
     public Sprite newPortrait;
-    public Sprite portraitCalm, portraitSad, portraitAngry;
+    public Sprite portraitAngry, portraitFury, portraitMistake, portraitMock, portraitNormal, portraitPink, portraitRight, portraitSad, portraitShock;
     public DialogSequence npcDialog;
     public DialogSequence newDialogSequence;
     int currentDialogID;
@@ -84,7 +84,7 @@ public class NPCDialog : MonoBehaviour
             case DialogEmotionalState.ANGRY:
                 return portraitAngry;
             default:
-                return portraitCalm;
+                return portraitNormal;
         }
     }
 

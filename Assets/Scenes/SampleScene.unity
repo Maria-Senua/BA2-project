@@ -8620,9 +8620,15 @@ MonoBehaviour:
   dialogRunner: {fileID: 1351091068}
   portrait: {fileID: 21300000, guid: 066d7cd16fc3e45e1ac488062e278cae, type: 3}
   newPortrait: {fileID: 0}
-  portraitCalm: {fileID: 21300000, guid: 066d7cd16fc3e45e1ac488062e278cae, type: 3}
-  portraitSad: {fileID: 21300000, guid: ea4d52328fa4e409cba49db6adea9432, type: 3}
   portraitAngry: {fileID: 21300000, guid: c0a5ce631326a45a385a1c88552c3687, type: 3}
+  portraitFury: {fileID: 21300000, guid: bf434bd2c259f4d91a0275f999e93116, type: 3}
+  portraitMistake: {fileID: 21300000, guid: b8a96a05f8dff40b88591ec09da8b133, type: 3}
+  portraitMock: {fileID: 21300000, guid: 9217acc763e8e4953ae6844012297bc1, type: 3}
+  portraitNormal: {fileID: 21300000, guid: 066d7cd16fc3e45e1ac488062e278cae, type: 3}
+  portraitPink: {fileID: 21300000, guid: 5fc76054f4269424796abb7f460547c3, type: 3}
+  portraitRight: {fileID: 21300000, guid: c27efe09b45954d5d95b7ffa013c95b1, type: 3}
+  portraitSad: {fileID: 21300000, guid: ea4d52328fa4e409cba49db6adea9432, type: 3}
+  portraitShock: {fileID: 21300000, guid: 3ab1da1457f4f4e3f84120df7228e458, type: 3}
   npcDialog: {fileID: 11400000, guid: 9e07007529d1d4ea89bb8ade698bd688, type: 2}
   newDialogSequence: {fileID: 0}
   interactionDistance: 3
@@ -9201,9 +9207,15 @@ MonoBehaviour:
   dialogRunner: {fileID: 1351091068}
   portrait: {fileID: 21300000, guid: 953048d930e084483b808b6447c48074, type: 3}
   newPortrait: {fileID: 0}
-  portraitCalm: {fileID: 0}
-  portraitSad: {fileID: 0}
   portraitAngry: {fileID: 0}
+  portraitFury: {fileID: 0}
+  portraitMistake: {fileID: 0}
+  portraitMock: {fileID: 0}
+  portraitNormal: {fileID: 0}
+  portraitPink: {fileID: 0}
+  portraitRight: {fileID: 0}
+  portraitSad: {fileID: 0}
+  portraitShock: {fileID: 0}
   npcDialog: {fileID: 0}
   newDialogSequence: {fileID: 0}
   interactionDistance: 3
@@ -17971,9 +17983,15 @@ MonoBehaviour:
   dialogRunner: {fileID: 1351091068}
   portrait: {fileID: 21300000, guid: 066d7cd16fc3e45e1ac488062e278cae, type: 3}
   newPortrait: {fileID: 21300000, guid: 9217acc763e8e4953ae6844012297bc1, type: 3}
-  portraitCalm: {fileID: 0}
-  portraitSad: {fileID: 0}
   portraitAngry: {fileID: 0}
+  portraitFury: {fileID: 0}
+  portraitMistake: {fileID: 0}
+  portraitMock: {fileID: 0}
+  portraitNormal: {fileID: 0}
+  portraitPink: {fileID: 0}
+  portraitRight: {fileID: 0}
+  portraitSad: {fileID: 0}
+  portraitShock: {fileID: 0}
   npcDialog: {fileID: 0}
   newDialogSequence: {fileID: 11400000, guid: 9a7e7d066cd014f158f0f26e14d9b32a, type: 2}
   interactionDistance: 3
@@ -18502,9 +18520,15 @@ MonoBehaviour:
   dialogRunner: {fileID: 1351091068}
   portrait: {fileID: 21300000, guid: 31cd2fd420e84435b984707b33825a01, type: 3}
   newPortrait: {fileID: 0}
-  portraitCalm: {fileID: 0}
-  portraitSad: {fileID: 0}
   portraitAngry: {fileID: 0}
+  portraitFury: {fileID: 0}
+  portraitMistake: {fileID: 0}
+  portraitMock: {fileID: 0}
+  portraitNormal: {fileID: 0}
+  portraitPink: {fileID: 0}
+  portraitRight: {fileID: 0}
+  portraitSad: {fileID: 0}
+  portraitShock: {fileID: 0}
   npcDialog: {fileID: 0}
   newDialogSequence: {fileID: 0}
   interactionDistance: 3

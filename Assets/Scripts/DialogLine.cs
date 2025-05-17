@@ -20,7 +20,13 @@ public class DialogChoice
 
 public enum DialogEmotionalState
 {
-    CALM,
     ANGRY,
-    SAD
+    FURY,
+    MISTAKE,
+    MOCK,
+    NORMAL,
+    PINK,
+    RIGHT,
+    SAD,
+    SHOCK
 }
